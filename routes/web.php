@@ -33,3 +33,4 @@ Route::get('logout', function () {
    \Illuminate\Support\Facades\Auth::logout();
    return redirect()->route('login');
 })->name('logout')->middleware('auth');
+//man ali salsali kheng hastam
