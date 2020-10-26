@@ -12,4 +12,5 @@ class Airline extends Model
     protected $fillable = [
         'name'
     ];
+
 }
