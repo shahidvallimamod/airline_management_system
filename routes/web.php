@@ -26,6 +26,8 @@ Route::middleware(['auth'])->prefix('admin')->group(function(){
     })->name('home');
 
     Route::resource('airlines',\App\Http\Controllers\AirlineController::class);
+    Route::resource('airports',\App\Http\Controllers\AirportController::class);
+    Route::resource('tickets',\App\Http\Controllers\TicketController::class);
     Route::resource('users',\App\Http\Controllers\UserController::class);
 });
 

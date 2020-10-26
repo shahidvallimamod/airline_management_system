@@ -7,11 +7,6 @@ use Illuminate\Http\Request;
 
 class AirlineController extends Controller
 {
-    public function __construct()
-    {
-
-    }
-
     public function index()
     {
         $data = Airline::all();

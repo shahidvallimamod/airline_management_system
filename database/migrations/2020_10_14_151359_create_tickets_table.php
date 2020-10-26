@@ -15,6 +15,12 @@ class CreateTicketsTable extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('airline_id')->constrained();
+            $table->foreignId('from_airport')->constrained('airports','id');
+            $table->foreignId('to_airport')->constrained('airports','id');
+            $table->string('airplane_model');
+            $table->string('flight_number');
+            $table->unsignedMediumInteger('available_seat');
             $table->timestamps();
         });
     }

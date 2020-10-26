@@ -15,6 +15,10 @@ class CreateBoughtTicketsTable extends Migration
     {
         Schema::create('bought_tickets', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('ticket_id')->constrained();
+            $table->foreignId('user_id')->constrained();
+            $table->string('seat_number');
+            $table->string('ticket_number');
             $table->timestamps();
         });
     }

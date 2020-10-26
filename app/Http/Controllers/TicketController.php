@@ -2,84 +2,76 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Airline;
+use App\Models\Airport;
 use App\Models\Ticket;
 use Illuminate\Http\Request;
 
 class TicketController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $data = Ticket::all();
+        return view('tickets.index', compact('data'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        $data['airports'] = Airport::all();
+        $data['airlines'] = Airline::all();
+
+        return view('tickets.create', compact('data'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'from_airport' => 'exists:airports,id'
+        ],[
+            'from_airport.exists' => 'فرودگاه انتخاب شده نیست',
+        ]);
+
+        Ticket::create([
+            'name' => $request->name,
+        ]);
+
+        return redirect()->route('tickets.index')->with(['success' => 'ایرلاین با موفقیت ایجاد شد']);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Ticket  $ticket
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Ticket $ticket)
+    public function show($id)
     {
-        //
+        $data = Ticket::FindOrFail($id);
+        return view('tickets.show', compact('data'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Ticket  $ticket
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Ticket $ticket)
+    public function edit($id)
     {
-        //
+        $data = Ticket::findOrFail($id);
+        return view('tickets.edit', compact('data'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Ticket  $ticket
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Ticket $ticket)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required|unique:airlines,name,'.$id,
+        ],[
+            'name.required' => 'نام ایرلاین نباید خالی باشد',
+            'name.unique' => 'نام ایرلاین تکراری است'
+        ]);
+
+        $data = Ticket::findOrFail($id);
+
+        $data->update([
+            'name' => $request->name
+        ]);
+
+        return redirect()->route('tickets.index')->with(['success' => 'ایرلاین با موفقیت ویرایش شد']);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Ticket  $ticket
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Ticket $ticket)
+    public function destroy($id)
     {
-        //
+        $data = Ticket::findOrFail($id);
+        $data->delete();
+        return redirect()->route('tickets.index')->with(['success' => 'ایرلاین با موفقیت حذف شد']);
     }
 }

@@ -7,79 +7,67 @@ use Illuminate\Http\Request;
 
 class AirportController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $data = Airport::all();
+        return view('airports.index', compact('data'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('airports.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|unique:airlines',
+        ],[
+            'name.required' => 'نام ایرلاین نباید خالی باشد',
+            'name.unique' => 'نام ایرلاین تکراری است'
+        ]);
+
+        Airport::create([
+            'name' => $request->name,
+        ]);
+
+        return redirect()->route('airports.index')->with(['success' => 'ایرلاین با موفقیت ایجاد شد']);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Airport  $airport
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Airport $airport)
+    public function show($id)
     {
-        //
+        $data = Airport::FindOrFail($id);
+        return view('airports.show', compact('data'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Airport  $airport
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Airport $airport)
+    public function edit($id)
     {
-        //
+        $data = Airport::findOrFail($id);
+        return view('airports.edit', compact('data'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Airport  $airport
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Airport $airport)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required|unique:airlines,name,'.$id,
+        ],[
+            'name.required' => 'نام ایرلاین نباید خالی باشد',
+            'name.unique' => 'نام ایرلاین تکراری است'
+        ]);
+
+        $data = Airport::findOrFail($id);
+
+        $data->update([
+            'name' => $request->name
+        ]);
+
+        return redirect()->route('airports.index')->with(['success' => 'ایرلاین با موفقیت ویرایش شد']);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Airport  $airport
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Airport $airport)
+    public function destroy($id)
     {
-        //
+        $data = Airport::findOrFail($id);
+        $data->delete();
+        return redirect()->route('airports.index')->with(['success' => 'ایرلاین با موفقیت حذف شد']);
     }
 }
