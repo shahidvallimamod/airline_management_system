@@ -33,7 +33,7 @@ class AirlineController extends Controller
         if ($request->hasFile('logo')) {
             $logo = $request->logo->store('airline_logo','public');
             // TODO CROP
-            $img = Image::make('storage/app/public/'.$logo);
+            $img = Image::make(storage_path("app\public\{$logo}"));
             $img->fit(50, 50);
             $img->save($logo);
 
