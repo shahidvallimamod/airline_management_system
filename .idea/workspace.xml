@@ -30,27 +30,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da305133-66dc-4927-be6c-29f98c3d5095" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/airports/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/airports/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/airports/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/airports/show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/tickets/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/tickets/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/tickets/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/tickets/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AirlineController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AirlineController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AirportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AirportController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TicketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TicketController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Airport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Airport.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/BoughtTicket.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/BoughtTicket.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Ticket.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Ticket.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_14_151359_create_airports_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_14_151359_create_airports_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_14_151359_create_tickets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_14_151359_create_tickets_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_14_151400_create_bought_tickets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_14_151400_create_bought_tickets_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_14_152219_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_14_152219_create_users_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -268,6 +248,9 @@
       <workItem from="1603724242337" duration="1701000" />
       <workItem from="1603725961807" duration="204000" />
       <workItem from="1603728162124" duration="2605000" />
+      <workItem from="1603884555502" duration="211000" />
+      <workItem from="1603884972320" duration="935000" />
+      <workItem from="1603890534117" duration="1300000" />
     </task>
     <task id="LOCAL‎۰۰۰۰۱" summary="first init">
       <created>1603725523825</created>

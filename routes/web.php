@@ -36,3 +36,4 @@ Route::get('logout', function () {
    return redirect()->route('login');
 })->name('logout')->middleware('auth');
 //man ali salsali kheng hastam
+//SIC.PARVIS.MAGNA
