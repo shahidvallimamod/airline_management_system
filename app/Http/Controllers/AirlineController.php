@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Airline;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class AirlineController extends Controller
 {
@@ -22,13 +24,24 @@ class AirlineController extends Controller
     {
         $request->validate([
             'name' => 'required|unique:airlines',
+            'logo' => 'image'
         ],[
             'name.required' => 'نام ایرلاین نباید خالی باشد',
             'name.unique' => 'نام ایرلاین تکراری است'
         ]);
 
+        if ($request->hasFile('logo')) {
+            $logo = $request->logo->store('airline_logo','public');
+            // TODO CROP
+            $img = Image::make('storage/app/public/'.$logo);
+            $img->fit(50, 50);
+            $img->save($logo);
+
+        }
+
         Airline::create([
             'name' => $request->name,
+            'logo' => $logo ?? null
         ]);
 
         return redirect()->route('airlines.index')->with(['success' => 'ایرلاین با موفقیت ایجاد شد']);
@@ -69,5 +82,10 @@ class AirlineController extends Controller
         $data = Airline::findOrFail($id);
         $data->delete();
         return redirect()->route('airlines.index')->with(['success' => 'ایرلاین با موفقیت حذف شد']);
+    }
+
+    public function downloadImage($file_name)
+    {
+        return Storage::download('kart_melli/'.$file_name);
     }
 }

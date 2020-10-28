@@ -26,7 +26,7 @@
                 <tr>
                     <td>{{$airline->id}}</td>
                     <td>{{$airline->name}}</td>
-                    <td>{{$airline->logo}}</td>
+                    <td><img src="{{asset('storage/'.$airline->logo)}}" alt=""></td>
                     <td><a href="{{route('airlines.edit', $airline->id)}}">ویرایش</a></td>
                     <td><a href="{{route('airlines.show', $airline->id)}}">نمایش</a></td>
                 </tr>

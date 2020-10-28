@@ -29,6 +29,8 @@ Route::middleware(['auth'])->prefix('admin')->group(function(){
     Route::resource('airports',\App\Http\Controllers\AirportController::class);
     Route::resource('tickets',\App\Http\Controllers\TicketController::class);
     Route::resource('users',\App\Http\Controllers\UserController::class);
+
+    Route::get('download-image/{file_name}',[\App\Http\Controllers\AirlineController::class,'downloadImage'])->name('download-image');
 });
 
 Route::get('logout', function () {

@@ -33,15 +33,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/amozeshgah.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/amozeshgah.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TicketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TicketController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AirlineController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AirlineController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Airline.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Airline.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Airport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Airport.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Ticket.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Ticket.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tickets/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tickets/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tickets/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tickets/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/airline/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/airline/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/airline/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/airline/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -213,6 +211,7 @@
       <path value="$PROJECT_DIR$/vendor/php-http/promise" />
       <path value="$PROJECT_DIR$/vendor/beberlei/assert" />
       <path value="$PROJECT_DIR$/vendor/morilog/jalali" />
+      <path value="$PROJECT_DIR$/vendor/intervention/image" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iNE9jP6XP2XXKO3C6HNuQ4gFcV" />
@@ -261,7 +260,7 @@
       <workItem from="1603724242337" duration="1701000" />
       <workItem from="1603725961807" duration="204000" />
       <workItem from="1603728162124" duration="2712000" />
-      <workItem from="1603895866948" duration="3399000" />
+      <workItem from="1603895866948" duration="5938000" />
     </task>
     <task id="LOCAL‎۰۰۰۰۱" summary="first init">
       <created>1603725523825</created>
@@ -293,7 +292,13 @@
       <option name="presentableId" value="LOCAL‎۰۰۰۰۵" />
       <updated>1603730854139</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL‎۰۰۰۰۶" summary="tickets">
+      <created>1603899304536</created>
+      <option name="number" value="LOCAL‎۰۰۰۰۶" />
+      <option name="presentableId" value="LOCAL‎۰۰۰۰۶" />
+      <updated>1603899304536</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,7 +333,8 @@
     <MESSAGE value="fix" />
     <MESSAGE value="user index" />
     <MESSAGE value="airlines and tickets crud" />
-    <option name="LAST_COMMIT_MESSAGE" value="airlines and tickets crud" />
+    <MESSAGE value="tickets" />
+    <option name="LAST_COMMIT_MESSAGE" value="tickets" />
   </component>
   <component name="WindowStateProjectService">
     <state x="452" y="232" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603728215394">
@@ -340,19 +346,24 @@
     </state>
     <state x="575" y="227" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1603729888350" />
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602693503935" />
-    <state x="341" y="85" width="1280" height="878" key="CommitChangelistDialog2" timestamp="1603730853500">
+    <state x="341" y="0" width="1280" height="878" key="CommitChangelistDialog2" timestamp="1603899303919">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="341" y="85" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1603730853500" />
+    <state x="341" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1603899303919" />
     <state x="409" y="103" width="1280" height="878" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1603725837452" />
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1603725808719">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="77" y="76" width="1447" height="708" key="DiffContextDialog" timestamp="1603899362938">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
+    <state x="77" y="76" width="1447" height="708" key="DiffContextDialog/0.0.1600.860@0.0.1600.860" timestamp="1603899362938" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603725808719" />
     <state x="706" y="360" key="FileChooserDialogImpl" timestamp="1603725160409">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="706" y="360" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1603725160409" />
+    <state x="438" y="191" key="MultipleFileMergeDialog" timestamp="1603899326723">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="438" y="191" key="MultipleFileMergeDialog/0.0.1600.860@0.0.1600.860" timestamp="1603899326723" />
     <state x="662" y="366" key="NewPhpFileDialog" timestamp="1603283121845">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -371,19 +382,19 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="506" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1602689976203" />
-    <state x="463" y="220" key="Vcs.Push.Dialog.v2" timestamp="1603730855895">
+    <state x="463" y="220" key="Vcs.Push.Dialog.v2" timestamp="1603899336679">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="463" y="220" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1603730855895" />
+    <state x="463" y="220" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1603899336679" />
     <state x="556" y="266" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603725839421" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1601741974986">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601741974986" />
-    <state x="519" y="186" width="672" height="561" key="search.everywhere.popup" timestamp="1603898399945">
+    <state x="519" y="186" width="672" height="561" key="search.everywhere.popup" timestamp="1603900733281">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="519" y="186" width="672" height="561" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1603898399945" />
+    <state x="519" y="186" width="672" height="561" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1603900733281" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1602689987730" />
   </component>
 </project>
