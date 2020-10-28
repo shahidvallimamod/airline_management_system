@@ -1,7 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
 
 Route::get('login',[\App\Http\Controllers\LoginController::class,'loginForm'])
     ->name('login')

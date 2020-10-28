@@ -117,6 +117,8 @@
       <path value="$PROJECT_DIR$/vendor/paquettg/string-encode" />
       <path value="$PROJECT_DIR$/vendor/php-http/httplug" />
       <path value="$PROJECT_DIR$/vendor/php-http/promise" />
+      <path value="$PROJECT_DIR$/vendor/beberlei/assert" />
+      <path value="$PROJECT_DIR$/vendor/morilog/jalali" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

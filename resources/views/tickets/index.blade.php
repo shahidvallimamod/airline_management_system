@@ -10,26 +10,38 @@
     @if(session('success'))
         {{session('success')}}
     @endif
-    <h1>airports</h1>
-    <a href="{{route('tickets.create')}}">افزودن ایرلاین</a>
+    <h1>tickets</h1>
+    <a href="{{route('tickets.create')}}">افزودن پرواز</a>
     <table>
         <thead>
             <tr>
                 <th>شناسه</th>
-                <th>نام</th>
-                <th>علمیات</th>
+                <th>ایرلاین</th>
+                <th>از</th>
+                <th>به</th>
+                <th>هواپیما</th>
+                <th>شماره پرواز</th>
+                <th>تعداد صندلی</th>
+                <th>تاریخ پرواز</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($data as $airport)
+            @foreach($data['tickets'] as $ticket)
                 <tr>
-                    <td>{{$airport->id}}</td>
-                    <td>{{$airport->name}}</td>
-                    <td><a href="{{route('airports.edit', $airport->id)}}">ویرایش</a></td>
-                    <td><a href="{{route('airports.show', $airport->id)}}">نمایش</a></td>
+                    <td>{{$ticket->id}}</td>
+                    <td>{{$ticket->airline->name}}</td>
+                    <td>{{$ticket->fromAirport->name}}</td>
+                    <td>{{$ticket->toAirport->name}}</td>
+                    <td>{{$ticket->airplane_model}}</td>
+                    <td>{{$ticket->flight_number}}</td>
+                    <td>{{$ticket->available_seat}}</td>
+                    <td>{{jdate($ticket->created_at)}}</td>
+                    <td><a href="{{route('tickets.edit', $ticket->id)}}">ویرایش</a></td>
+                    <td><a href="{{route('tickets.show', $ticket->id)}}">نمایش</a></td>
                 </tr>
             @endforeach
         </tbody>
     </table>
+    {{$data['tickets']->links()}}
 </body>
 </html>

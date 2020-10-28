@@ -9,9 +9,10 @@ use Illuminate\Http\Request;
 
 class TicketController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $data = Ticket::all();
+        $data['tickets'] = Ticket::with(['airline','fromAirport','toAirport'])->orderByDesc('id')->paginate(2);
+
         return view('tickets.index', compact('data'));
     }
 
@@ -26,16 +27,23 @@ class TicketController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'from_airport' => 'exists:airports,id'
+            'from_airport' => 'required|exists:airports,id',
+            'to_airport' => 'required|exists:airports,id',
+            'airplane_model' => 'required'
         ],[
             'from_airport.exists' => 'فرودگاه انتخاب شده نیست',
         ]);
 
         Ticket::create([
-            'name' => $request->name,
+            'airline_id' => $request->airline_id,
+            'from_airport' => $request->from_airport,
+            'to_airport' => $request->to_airport,
+            'airplane_model' => $request->airplane_model,
+            'flight_number' => $request->flight_number,
+            'available_seat' => $request->available_seat,
         ]);
 
-        return redirect()->route('tickets.index')->with(['success' => 'ایرلاین با موفقیت ایجاد شد']);
+        return redirect()->route('tickets.index')->with(['success' => 'پرواز با موفقیت ایجاد شد']);
     }
 
     public function show($id)
